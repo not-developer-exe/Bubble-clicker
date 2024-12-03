@@ -3,7 +3,7 @@ let score = document.querySelector('.score');
 let target = document.querySelector('.target');
 let timer = document.querySelector('.timer');
 
-let intervalId; // Store the timer ID
+let intervalId; /
 
 function nextTarget() {
   target.innerHTML = `Next Target: ${Math.floor(Math.random() * 9 + 1)}`;
@@ -20,24 +20,24 @@ function startTimer() {
     if (time === 0) {
       clearInterval(intervalId);
       alert("Your Score is " + score.innerHTML);
-      resetGame(); // Reset the game properly
+      resetGame(); 
     }
   }, 1000);
 }
 
 function resetGame() {
-  clearInterval(intervalId); // Stop any running timer
-  score.innerHTML = 0; // Reset score
-  nextTarget(); // Set a new target
-  shuffleBubbles(); // Shuffle bubbles at the start
-  startTimer(); // Restart the timer
+  clearInterval(intervalId); 
+  score.innerHTML = 0; 
+  nextTarget(); 
+  shuffleBubbles(); 
+  startTimer(); 
 }
 
 function createBubbles() {
   for (let i = 0; i < 50; i++) {
     let bubble = document.createElement('div');
     bubble.classList.add('bubble');
-    bubble.innerHTML = Math.floor(Math.random() * 9 + 1); // Assign initial random number
+    bubble.innerHTML = Math.floor(Math.random() * 9 + 1); 
     main.appendChild(bubble);
   }
 }
@@ -45,7 +45,7 @@ function createBubbles() {
 function shuffleBubbles() {
   let bubbles = document.querySelectorAll('.bubble');
   bubbles.forEach(function (bubble) {
-    bubble.innerHTML = Math.floor(Math.random() * 9 + 1); // Shuffle the number
+    bubble.innerHTML = Math.floor(Math.random() * 9 + 1); 
   });
 }
 
@@ -57,12 +57,12 @@ function startGame() {
         score.innerHTML = parseInt(score.innerHTML) + 10;
         nextTarget();
       }
-      shuffleBubbles(); // Shuffle numbers after each move
+      shuffleBubbles(); 
     });
   });
 }
 
-// Initialize the game
+
 score.innerHTML = 0;
 nextTarget();
 createBubbles();
